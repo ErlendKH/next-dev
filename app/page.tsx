@@ -72,13 +72,15 @@ export default function Home() {
       toast.success('Oh! You found a golden nugget.', {
         style: {
           color: 'darkgreen'
-        }
+        },
+        icon: '💰'
       })
     } else if(randomNumber < 10){
       toast.success('Oh! You found a wild pikachu.', {
         style: {
           color: 'darkgoldenrod'
-        }
+        },
+        icon: '🐹'
       })
     } else {
       toast.success(toastMessage);
