@@ -96,7 +96,7 @@ export default function Home() {
         </h1>
         {/* Replace Avatar with image later */}
        {/*  <Avatar name="Erlend" src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" size="lg" className="mb-2" /> */}
-        <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="rounded-full border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" />
+        <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" />
         <div className="text-2xl text-center">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
