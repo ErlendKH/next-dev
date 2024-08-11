@@ -1,9 +1,19 @@
-import Image from "next/image";
+'use client';
+
+import NextImage from "next/image";
 
 // Next UI
-import { Button, Avatar } from "@nextui-org/react";
+import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
 import { MaterialSymbolsTrain } from "./_components/icons/train"
+
+let createTrainClicked = false
+
+function createTrainHandler(e:any){
+  // console.log(e)
+
+  createTrainClicked = true
+}
 
 export default function Home() {
   return (
@@ -18,11 +28,20 @@ export default function Home() {
         <div className="text-2xl">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
-      <div className="mb-60 mx-16">
+      <div className="flex flex-col mb-60 mx-16">
         {/* <p className="text-4xl">{"Let's create a railway."}</p> */}
-        <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} className="text-xl text-sky-300">
+
+        <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} 
+          className="text-xl text-sky-300 mb-12" onClick={(e) => {createTrainHandler(e)}}>
             {"Let's create a railway."}
         </Button>
+
+        <ButtonGroup>
+          <Button isIconOnly radius="full" className="w-64 h-64 text-emerald-300">
+            <MaterialSymbolsTrain className="size-32" />
+          </Button>
+        </ButtonGroup>
+
       </div>
 
       <footer className="">
