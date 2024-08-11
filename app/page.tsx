@@ -6,16 +6,54 @@ import NextImage from "next/image";
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
 import { MaterialSymbolsTrain } from "./_components/icons/train"
+import { useState } from "react";
 
-let createTrainClicked = false
-
-function createTrainHandler(e:any){
-  // console.log(e)
-
-  createTrainClicked = true
+function delay(time:any) {
+  return new Promise(resolve => setTimeout(resolve, time));
 }
 
 export default function Home() {
+
+  const [initialTrainText, setInitialTrainText] = useState("Let's create a railway.");
+  const [createTrainClicked, setCreateTrainClicked] = useState(false);
+  const [trainIsLoading, setTrainIsLoading] = useState(false);
+
+  function initialTrainButton(text:string, isClicked:boolean, loading:boolean){
+    return isClicked ? (
+      null
+    ) : (
+      <Button isLoading={loading} size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} 
+        className="text-xl text-sky-300 mb-12" onClick={(e) => {createTrainHandler(e)}}>
+        { text }
+      </Button>
+    )
+  }
+  
+  function createTrainHandler(e:any){
+    // console.log(e)
+    console.log(`Creating the train express ...`)
+
+    setInitialTrainText("Creating the train ...")
+    setTrainIsLoading(true)
+
+    delay(3000).then((v) => {
+      console.log(`The train is ready. Splendid.`)
+      setCreateTrainClicked(true)
+    })
+  
+    // setCreateTrainClicked(true)
+  }
+
+  function showTrain(trainCreated:boolean){
+    return trainCreated? (
+      <ButtonGroup>
+        <Button isIconOnly radius="full" className="w-64 h-64 text-emerald-300">
+          <MaterialSymbolsTrain className="size-32" />
+        </Button>
+      </ButtonGroup>
+    ) : null
+  }
+
   return (
 
     <main className="flex flex-col items-center bg-slate-950">
@@ -31,16 +69,22 @@ export default function Home() {
       <div className="flex flex-col mb-60 mx-16">
         {/* <p className="text-4xl">{"Let's create a railway."}</p> */}
 
+        {initialTrainButton(initialTrainText, createTrainClicked, trainIsLoading)}
+
+        {showTrain(createTrainClicked)}
+
+{/* 
         <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} 
           className="text-xl text-sky-300 mb-12" onClick={(e) => {createTrainHandler(e)}}>
             {"Let's create a railway."}
         </Button>
+         */}
 
-        <ButtonGroup>
+{/*         <ButtonGroup>
           <Button isIconOnly radius="full" className="w-64 h-64 text-emerald-300">
             <MaterialSymbolsTrain className="size-32" />
           </Button>
-        </ButtonGroup>
+        </ButtonGroup> */}
 
       </div>
 
