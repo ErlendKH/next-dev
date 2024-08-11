@@ -6,7 +6,6 @@ import {Providers} from "./providers";
 
 import { Toaster } from "react-hot-toast";
 
-// Erlend: Hm, I haven't used NextFont before. I hope it's compatible with Tailwind CSS and Next UI?
 const inter = Inter({ subsets: ["latin"] });
 
 const raleway = Raleway({
