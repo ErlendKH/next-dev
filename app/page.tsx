@@ -9,17 +9,18 @@ export default function Home() {
   return (
 
     <main className="flex flex-col items-center bg-slate-950">
-      <header className="flex flex-col items-center my-32 mx-16">
+      <header className="flex flex-col items-center mt-32 mb-40 mx-16">
         <h1 className="text-6xl dark:text-sky-300 text-sky-700 mb-16">
           Next.js Playground
         </h1>
+        {/* Replace Avatar with image later */}
         <Avatar name="Erlend" size="lg" className="mb-2" />
         <div className="text-2xl">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
-      <div className="my-32 mx-16">
+      <div className="mb-60 mx-16">
         {/* <p className="text-4xl">{"Let's create a railway."}</p> */}
-        <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} className="text-xl">
+        <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} className="text-xl text-sky-300">
             {"Let's create a railway."}
         </Button>
       </div>
