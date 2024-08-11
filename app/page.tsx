@@ -8,6 +8,8 @@ import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 import { MaterialSymbolsTrain } from "./_components/icons/train"
 import { useState } from "react";
 
+import { toast } from 'react-hot-toast';
+
 function delay(time:any) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -17,6 +19,7 @@ export default function Home() {
   const [initialTrainText, setInitialTrainText] = useState("Let's create a railway.");
   const [createTrainClicked, setCreateTrainClicked] = useState(false);
   const [trainIsLoading, setTrainIsLoading] = useState(false);
+  const [toastMessage, setToastMessage] = useState("On and on and on ...");
 
   function initialTrainButton(text:string, isClicked:boolean, loading:boolean){
     return isClicked ? (
@@ -44,12 +47,33 @@ export default function Home() {
 
   function showTrain(trainCreated:boolean){
     return trainCreated? (
-      <ButtonGroup>
-        <Button isIconOnly radius="full" className="w-64 h-64 text-emerald-300">
+      <ButtonGroup className="">
+        <Button isIconOnly radius="full" className="w-96 h-96 text-emerald-300" onClick={(e) => {trainHandler(e)}}>
           <MaterialSymbolsTrain className="size-32" />
         </Button>
       </ButtonGroup>
     ) : null
+  }
+
+  // Just a different way of defining a function
+  const trainHandler = (e:any) => {
+    const randomNumber = Math.round(Math.random() * 100)
+    console.log(`randomNumber: ${randomNumber}`)
+    if(randomNumber > 90){
+      toast.success('Oh! You found a golden nugget.', {
+        style: {
+          color: 'darkgreen'
+        }
+      })
+    } else if(randomNumber < 10){
+      toast.success('Oh! You found a wild pikachu.', {
+        style: {
+          color: 'darkgoldenrod'
+        }
+      })
+    } else {
+      toast.success(toastMessage);
+    }
   }
 
   return (

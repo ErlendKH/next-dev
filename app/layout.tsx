@@ -4,6 +4,8 @@ import "./globals.css";
 
 import {Providers} from "./providers";
 
+import { Toaster } from "react-hot-toast";
+
 // Erlend: Hm, I haven't used NextFont before. I hope it's compatible with Tailwind CSS and Next UI?
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +28,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={raleway.className}>
         <Providers>
+            <Toaster position="bottom-center" toastOptions={{
+              icon: '🛤'
+            }} />
             {children}
         </Providers>
       </body>
