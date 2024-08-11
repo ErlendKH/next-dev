@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 // Next UI
-import { Button } from "@nextui-org/react";
+import { Button, Avatar } from "@nextui-org/react";
 
 import { MaterialSymbolsTrain } from "./_components/icons/train"
 
@@ -13,6 +13,7 @@ export default function Home() {
         <h1 className="text-6xl dark:text-sky-300 text-sky-700 mb-16">
           Next.js Playground
         </h1>
+        <Avatar name="Erlend" size="lg" className="mb-2" />
         <div className="text-2xl">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
