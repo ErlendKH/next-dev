@@ -58,7 +58,7 @@ export default function Home() {
 
   function showTrainCounter(trainCreated:boolean){
     return trainCreated ? (
-      <div className="text-xl">Path towards infinity ... <span className="text-amber-700 dark:text-amber-300">{ trainCounter }</span></div>
+      <div className="text-xl text-center">Path towards infinity ... <span className="text-amber-700 dark:text-amber-300">{ trainCounter }</span></div>
     ) : null
   }
 
@@ -91,12 +91,13 @@ export default function Home() {
 
     <main className="flex flex-col items-center bg-slate-950">
       <header className="flex flex-col items-center mt-32 mb-40 mx-16">
-        <h1 className="text-6xl dark:text-sky-300 text-sky-700 mb-16">
+        <h1 className="text-6xl text-center dark:text-sky-300 text-sky-700 mb-20">
           Next.js Playground
         </h1>
         {/* Replace Avatar with image later */}
-        <Avatar name="Erlend" size="lg" className="mb-2" />
-        <div className="text-2xl">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
+       {/*  <Avatar name="Erlend" src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" size="lg" className="mb-2" /> */}
+        <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="rounded-full border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" />
+        <div className="text-2xl text-center">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
       <div className="flex flex-col mb-60 mx-16">
