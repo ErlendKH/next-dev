@@ -94,9 +94,8 @@ export default function Home() {
         <h1 className="text-6xl text-center dark:text-sky-300 text-sky-700 mb-20">
           Next.js Playground
         </h1>
-        {/* Replace Avatar with image later */}
-       {/*  <Avatar name="Erlend" src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" size="lg" className="mb-2" /> */}
-        <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" />
+        <Avatar name="Erlend" src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" className="mb-2 w-32 h-32" />
+        {/* <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" /> */}
         <div className="text-2xl text-center">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
       </header>
 
