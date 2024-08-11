@@ -3,6 +3,8 @@ import Image from "next/image";
 // Next UI
 import { Button } from "@nextui-org/react";
 
+import { MaterialSymbolsTrain } from "./_components/icons/train"
+
 export default function Home() {
   return (
 
@@ -16,7 +18,7 @@ export default function Home() {
 
       <div className="my-32 mx-16">
         {/* <p className="text-4xl">{"Let's create a railway."}</p> */}
-        <Button size="lg" color="primary" variant="ghost" endContent="" className="text-xl">
+        <Button size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} className="text-xl">
             {"Let's create a railway."}
         </Button>
       </div>
