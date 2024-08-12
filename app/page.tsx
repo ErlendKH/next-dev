@@ -10,10 +10,47 @@ import { IconTree, IconTrain } from "./_components/icons"
 import { useState } from "react";
 
 import { toast } from 'react-hot-toast';
+import { tree } from "next/dist/build/templates/app-page";
 
 function delay(time:any) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
+
+// size is optional. md w-16 h-16 is the default value.
+const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
+  let classes = "bg-transparent text-green-300 "
+  if(size){
+    switch(size){
+      case "xs":
+        classes += "w-8 h-8"
+        break;
+      case "sm":
+        classes += "w-12 h-12"
+        break;
+      case "md":
+        classes += "w-16 h-16"
+        break;
+      case "lg":
+        classes += "w-20 h-20"
+        break;
+      default:
+        classes += "w-16 h-16" // Default
+        break;
+    }
+  } else {
+    classes += "w-16 h-16" // Default
+  }
+
+  // console.log(classes)
+
+  return (
+    <ButtonGroup isDisabled>
+      <Button isIconOnly radius="full" className={classes}>
+        <IconTree className="w-full h-full" />
+      </Button>
+    </ButtonGroup>
+  );
+};
 
 export default function Home() {
 
@@ -112,16 +149,14 @@ export default function Home() {
 
         <div className="flex flex-row items-end justify-center mb-6">
 
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-12 h-12"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
+          <Tree size="sm" />
+          <Tree size="xs" />
+          <Tree size="md" />
+          <Tree size="lg" />
+          <Tree size="xs" />
+          <Tree size="sm" />
 
+{/* 
           <ButtonGroup isDisabled>
             <Button
               isIconOnly
@@ -171,6 +206,7 @@ export default function Home() {
               <IconTree className="w-full h-full" />
             </Button>
           </ButtonGroup>
+           */}
 
         </div>
 
