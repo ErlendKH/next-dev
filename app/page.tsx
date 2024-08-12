@@ -56,9 +56,9 @@ export default function Home() {
     ) : null
   }
 
-  function showTrainCounter(trainCreated:boolean){
+  function showTrainCounter(trainCreated:boolean, counter:number){
     return trainCreated ? (
-      <div className="text-xl text-center">Path towards infinity ... <span className="text-amber-700 dark:text-amber-300">{ trainCounter }</span></div>
+      <div className="text-xl text-center">Path towards infinity ... <span className="text-amber-700 dark:text-amber-300">{ trainCounter < 1 ? '' : trainCounter }</span></div>
     ) : null
   }
 
@@ -105,7 +105,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-4 items-center">
           {showTrain(createTrainClicked)}
-          {showTrainCounter(createTrainClicked)}
+          {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
 
       </div>
