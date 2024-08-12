@@ -156,58 +156,6 @@ export default function Home() {
           <Tree size="xs" />
           <Tree size="sm" />
 
-{/* 
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-8 h-8"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
-
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-16 h-16"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
-
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-20 h-20"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
-
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-8 h-8"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
-
-          <ButtonGroup isDisabled>
-            <Button
-              isIconOnly
-              radius="full"
-              className="bg-transparent text-green-300 w-12 h-12"
-            >
-              <IconTree className="w-full h-full" />
-            </Button>
-          </ButtonGroup>
-           */}
-
         </div>
 
         <div className="flex justify-center">
