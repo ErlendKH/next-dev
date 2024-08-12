@@ -5,7 +5,8 @@ import NextImage from "next/image";
 // Next UI
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
-import { BiTree, MaterialSymbolsTrain } from "./_components/icons"
+// import { BiTree, MaterialSymbolsTrain } from "./_components/icons"
+import { IconTree, IconTrain } from "./_components/icons"
 import { useState } from "react";
 
 import { toast } from 'react-hot-toast';
@@ -26,7 +27,7 @@ export default function Home() {
     return isClicked ? (
       null
     ) : (
-      <Button isLoading={loading} size="lg" color="primary" variant="ghost" endContent={<MaterialSymbolsTrain />} 
+      <Button isLoading={loading} size="lg" color="primary" variant="ghost" endContent={<IconTrain />} 
         className="text-xl text-sky-300 mb-12" onClick={(e) => {createTrainHandler(e)}}>
         { text }
       </Button>
@@ -50,7 +51,7 @@ export default function Home() {
     return trainCreated ? (
       <ButtonGroup className="">
         <Button isIconOnly radius="full" className="w-96 h-96 text-emerald-300" onClick={(e) => {trainHandler(e)}}>
-          <MaterialSymbolsTrain className="size-32" />
+          <IconTrain className="size-32" />
         </Button>
       </ButtonGroup>
     ) : null
