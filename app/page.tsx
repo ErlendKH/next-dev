@@ -75,7 +75,7 @@ function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
 export default function Home() {
 
   const context = useContext(trainContext)
-  console.log(context)
+  // console.log(context)
 
   const router = useRouter() // For navigation
 
@@ -139,13 +139,13 @@ export default function Home() {
   }
 
   function prepareToast(counter:number){
-    console.log(`Preparing a toast. The counter is ${counter}`)
+    // console.log(`Preparing a toast. The counter is ${counter}`)
 
     // Override when reaching a target point
     if(counter % 100 == 0){
 
       const random = randomIntegerInRange(1,4)
-      console.log(`Fate rolled ${random}.`)
+      // console.log(`Fate rolled ${random}.`)
       let randomIcon = '🌅'
       switch(random){
         case 1: randomIcon='🌅'; context.sunsets++; break;
