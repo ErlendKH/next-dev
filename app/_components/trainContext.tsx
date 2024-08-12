@@ -1,6 +1,6 @@
 'use client'
  
-import { createContext, useContext, useState } from 'react';
+import { createContext } from 'react';
 import { Toaster } from "react-hot-toast";
 
 const trainData = {
@@ -8,7 +8,7 @@ const trainData = {
     goldenNuggets: 0,
     pikachus: 0
 }
- 
+
 export const trainContext = createContext(trainData)
  
 export default function TrainProvider({
@@ -16,11 +16,6 @@ export default function TrainProvider({
 }: {
     children: React.ReactNode
 }) {
-    // const [trainData, setTrainData] = useState({
-    //     momentsPassed: 0,
-    //     goldenNuggets: 0,
-    //     pikachus: 0
-    // });
     return (
         <trainContext.Provider value={trainData}>
             <Toaster position="bottom-center" toastOptions={{
