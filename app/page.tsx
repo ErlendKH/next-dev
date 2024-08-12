@@ -75,7 +75,7 @@ function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
 export default function Home() {
 
   const context = useContext(trainContext)
-  // console.log(context)
+  console.log(context)
 
   const router = useRouter() // For navigation
 

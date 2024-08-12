@@ -1,5 +1,8 @@
 'use client';
 
+// Navigation
+import { useRouter } from 'next/navigation'
+
 import { Avatar, Button, ButtonGroup } from "@nextui-org/react";
 import { trainContext } from "../_components/trainContext";
 import { useContext } from "react";
@@ -9,7 +12,21 @@ import Link from "next/link";
 export default function Station() {
 
     const context = useContext(trainContext)
-    console.log(context)
+    // console.log(context)
+
+    const router = useRouter()
+
+    function goingBack(e:any){
+        // Reset context
+        context.momentsPassed = 0
+        context.goldenNuggets = 0
+        context.pikachus = 0
+        context.sunsets = 0
+        context.stars = 0
+
+        // Returning to home
+        router.push('/')
+    }
 
     return (
         <main className="flex flex-col items-center bg-slate-950">
@@ -57,7 +74,7 @@ export default function Station() {
 
                 </div>
                 
-                <div className="flex flex-col sm:flex-row justify-center gap-12 lg:gap-24 xl:gap-36">
+                <div className="flex flex-col sm:flex-row justify-center gap-12 lg:gap-24 xl:gap-36 mb-32">
 
                     <div className="flex flex-col justify-center text-center">
                         <ButtonGroup isDisabled className="mb-2">
@@ -79,6 +96,14 @@ export default function Station() {
                         <div className="text-2xl text-yellow-700 dark:text-yellow-300">{context.stars}</div>
                     </div>
 
+                </div>
+
+                <div className="flex justify-center items-center">
+                    <Button size="lg" color="primary" variant="light" className="text-2xl"
+                        onClick={(e) => {goingBack(e)}}
+                    >
+                        {"Where to go next?"}
+                    </Button>
                 </div>
 
             </div>
