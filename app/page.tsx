@@ -2,6 +2,8 @@
 
 import NextImage from "next/image";
 
+import { trainContext } from "./_components/trainContext";
+
 // Navigation
 import { useRouter } from 'next/navigation'
 
@@ -9,7 +11,7 @@ import { useRouter } from 'next/navigation'
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
 import { IconTree, IconTrain } from "./_components/icons"
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { toast } from 'react-hot-toast';
 
@@ -56,7 +58,7 @@ const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
 function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
   let trees = []
   for (let i = 0; i < treeSizeArray.length; i++) {
-    const iconTree = <Tree size={treeSizeArray[i]} />
+    const iconTree = <Tree size={treeSizeArray[i]} key={i} />
     trees.push(iconTree)
   }
   return treeSizeArray ? (
@@ -67,6 +69,9 @@ function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
 }
 
 export default function Home() {
+
+  const context = useContext(trainContext)
+  console.log(context)
 
   const router = useRouter() // For navigation
 
