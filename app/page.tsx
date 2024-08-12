@@ -130,55 +130,16 @@ export default function Home() {
   // Just a different way of defining a function
   const trainHandler = (e:any) => {
     const newCount = trainCounter + 1
-    // setTrainCounter(trainCounter + 1)
+    // console.log(newCount)
+
     setTrainCounter(newCount)
     context.momentsPassed++
 
-    // console.log(trainCounter)
-    // console.log(newCount)
-
     prepareToast(newCount)
-
-  //   // Override when reaching a target point
-  //   if(trainCounter == 10){
-  //     toast.success("You've arrived.", {
-  //       style: {
-  //         color: 'azure'
-  //       },
-  //       icon: '🚉'
-  //     })
-  //     return // Returning early
-  //   }
-
-  //   const randomNumber = Math.round(Math.random() * 100)
-  //   // console.log(`randomNumber: ${randomNumber}`)
-  //   // console.log(trainCounter)
-  //   if(randomNumber > 90){
-  //     toast.success('Oh! You found a golden nugget.', {
-  //       style: {
-  //         color: 'darkgreen'
-  //       },
-  //       icon: '💰'
-  //     })
-  //     context.goldenNuggets++
-  //   } else if(randomNumber < 10){
-  //     toast.success('Oh! You found a wild pikachu.', {
-  //       style: {
-  //         color: 'darkgoldenrod'
-  //       },
-  //       icon: '🐹'
-  //     })
-  //     context.pikachus++
-  //   } else {
-  //     toast.success(toastMessage);
-  //   }
-  // }
   }
 
   function prepareToast(counter:number){
     console.log(`Preparing a toast. The counter is ${counter}`)
-
-    // console.log(randomIntegerInRange(1,10))
 
     // Override when reaching a target point
     if(counter % 10 == 0){
@@ -192,9 +153,6 @@ export default function Home() {
         case 3: randomIcon='🌠'; context.stars++; break;
         case 4: randomIcon='🌌'; context.stars++; break;
       }
-
-      // const randomTen = randomIntegerInRange(1,10)
-      // console.log(randomTen)
 
       toast.success("You arrived.", {
         style: {
@@ -253,8 +211,6 @@ export default function Home() {
       console.log(`Finally breathing the fresh air outside.`)
       router.push('/train-station')
     })
-
-    // router.push('/train-station')
   }
 
   return (

@@ -5,7 +5,6 @@ import "./globals.css";
 import {Providers} from "./providers";
 
 import TrainProvider from "./_components/trainContext";
-// import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +28,6 @@ export default function RootLayout({
       <body className={raleway.className}>
         <Providers>
           <TrainProvider>{ children }</TrainProvider>
-          {/*             <Toaster position="bottom-center" toastOptions={{
-              icon: '🛤'
-            }} />
-            {children} */}
         </Providers>
       </body>
     </html>

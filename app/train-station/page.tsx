@@ -99,7 +99,7 @@ export default function Station() {
                 </div>
 
                 <div className="flex justify-center items-center">
-                    <Button size="lg" color="primary" variant="light" className="text-2xl"
+                    <Button size="lg" color="primary" variant="light" className="text-2xl text-sky-300"
                         onClick={(e) => {goingBack(e)}}
                     >
                         {"Where to go next?"}
