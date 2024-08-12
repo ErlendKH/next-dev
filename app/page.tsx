@@ -5,7 +5,7 @@ import NextImage from "next/image";
 // Next UI
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
-import { MaterialSymbolsTrain } from "./_components/icons/train"
+import { BiTree, MaterialSymbolsTrain } from "./_components/icons"
 import { useState } from "react";
 
 import { toast } from 'react-hot-toast';
@@ -100,6 +100,10 @@ export default function Home() {
       </header>
 
       <div className="flex flex-col mb-60 mx-16">
+
+        <ButtonGroup>
+          <Button isIconOnly></Button>
+        </ButtonGroup>
 
         {initialTrainButton(initialTrainText, createTrainClicked, trainIsLoading)}
 
