@@ -164,16 +164,7 @@ export default function Home() {
 
         <div className="flex flex-row items-end justify-center mb-6">
 
-          {
-            createTrees(["sm","xs","md","lg","xs","sm"])
-          }
-
-{/*           <Tree size="sm" />
-          <Tree size="xs" />
-          <Tree size="md" />
-          <Tree size="lg" />
-          <Tree size="xs" />
-          <Tree size="sm" /> */}
+          {createTrees(["sm","xs","md","lg","xs","sm"])}
 
         </div>
 
