@@ -50,6 +50,20 @@ const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
   );
 };
 
+// Creates trees with array of sizes
+function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
+  let trees = []
+  for (let i = 0; i < treeSizeArray.length; i++) {
+    const iconTree = <Tree size={treeSizeArray[i]} />
+    trees.push(iconTree)
+  }
+  return treeSizeArray ? (
+    trees
+  ) : (
+    null
+  )
+}
+
 export default function Home() {
 
   const [initialTrainText, setInitialTrainText] = useState("Let's create a railway.");
@@ -101,6 +115,9 @@ export default function Home() {
   // Just a different way of defining a function
   const trainHandler = (e:any) => {
     setTrainCounter(trainCounter + 1)
+
+    // Override when reaching a 
+
     const randomNumber = Math.round(Math.random() * 100)
     // console.log(`randomNumber: ${randomNumber}`)
     console.log(trainCounter)
@@ -147,12 +164,16 @@ export default function Home() {
 
         <div className="flex flex-row items-end justify-center mb-6">
 
-          <Tree size="sm" />
+          {
+            createTrees(["sm","xs","md","lg","xs","sm"])
+          }
+
+{/*           <Tree size="sm" />
           <Tree size="xs" />
           <Tree size="md" />
           <Tree size="lg" />
           <Tree size="xs" />
-          <Tree size="sm" />
+          <Tree size="sm" /> */}
 
         </div>
 
@@ -168,6 +189,11 @@ export default function Home() {
           {showTrain(createTrainClicked)}
           {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
+
+        <Button>
+          {"You've reach your destination"}
+        </Button>
+
       </div>
 
       <footer className=""></footer>
