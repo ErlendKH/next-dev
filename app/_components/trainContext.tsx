@@ -19,7 +19,8 @@ export default function TrainProvider({
     return (
         <trainContext.Provider value={trainData}>
             <Toaster position="bottom-center" toastOptions={{
-                icon: '🛤'
+                // icon: '🛤'
+                icon: '🛤️'
             }} />
             {children}
         </trainContext.Provider>

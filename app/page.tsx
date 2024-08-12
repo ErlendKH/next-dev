@@ -19,6 +19,10 @@ function delay(time:any) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 
+function randomIntegerInRange(min:number, max:number) {
+  return Math.round(Math.random() * (max - min) + min)
+}
+
 // size is optional. md w-16 h-16 is the default value.
 const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
   let classes = "bg-transparent text-green-300 "
@@ -125,10 +129,83 @@ export default function Home() {
 
   // Just a different way of defining a function
   const trainHandler = (e:any) => {
-    setTrainCounter(trainCounter + 1)
+    const newCount = trainCounter + 1
+    // setTrainCounter(trainCounter + 1)
+    setTrainCounter(newCount)
     context.momentsPassed++
 
-    // Override when reaching a 
+    // console.log(trainCounter)
+    // console.log(newCount)
+
+    prepareToast(newCount)
+
+  //   // Override when reaching a target point
+  //   if(trainCounter == 10){
+  //     toast.success("You've arrived.", {
+  //       style: {
+  //         color: 'azure'
+  //       },
+  //       icon: '🚉'
+  //     })
+  //     return // Returning early
+  //   }
+
+  //   const randomNumber = Math.round(Math.random() * 100)
+  //   // console.log(`randomNumber: ${randomNumber}`)
+  //   // console.log(trainCounter)
+  //   if(randomNumber > 90){
+  //     toast.success('Oh! You found a golden nugget.', {
+  //       style: {
+  //         color: 'darkgreen'
+  //       },
+  //       icon: '💰'
+  //     })
+  //     context.goldenNuggets++
+  //   } else if(randomNumber < 10){
+  //     toast.success('Oh! You found a wild pikachu.', {
+  //       style: {
+  //         color: 'darkgoldenrod'
+  //       },
+  //       icon: '🐹'
+  //     })
+  //     context.pikachus++
+  //   } else {
+  //     toast.success(toastMessage);
+  //   }
+  // }
+  }
+
+  function prepareToast(counter:number){
+    console.log(`Preparing a toast. The counter is ${counter}`)
+
+    // console.log(randomIntegerInRange(1,10))
+
+    // Override when reaching a target point
+    if(counter % 10 == 0){
+
+      const random = randomIntegerInRange(1,5)
+      console.log(`Fate rolled ${random}.`)
+      let randomIcon = '🌅'
+      switch(random){
+        case 1: randomIcon='🌅'; break;
+        case 2: randomIcon='🌄';break;
+        case 3: randomIcon='🏞️';break;
+        case 4: randomIcon='🌌';break;
+        case 5: randomIcon='🌠';break;
+      }
+
+      // const randomTen = randomIntegerInRange(1,10)
+      // console.log(randomTen)
+
+      toast.success("You arrived.", {
+        style: {
+          color: 'midnightblue'
+        },
+        icon: randomIcon
+        // icon: '🌅'
+      })
+      return // Returning early
+    }
 
     const randomNumber = Math.round(Math.random() * 100)
     // console.log(`randomNumber: ${randomNumber}`)
