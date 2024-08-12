@@ -102,7 +102,7 @@ export default function Station() {
                     <Button size="lg" variant="light" className="text-3xl text-sky-700 dark:text-sky-300"
                         onClick={(e) => {goingBack(e)}}
                     >
-                        {"Where to go next?"}
+                        {"Just one more trip ..."}
                     </Button>
                 </div>
 
