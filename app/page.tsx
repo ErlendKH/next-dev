@@ -110,7 +110,7 @@ export default function Home() {
 
       <div className="flex flex-col mb-60 mx-16">
 
-        <div className="mb-4">
+        <div className="flex flex-row items-end justify-center mb-6">
 
           <ButtonGroup isDisabled>
             <Button
@@ -146,7 +146,7 @@ export default function Home() {
             <Button
               isIconOnly
               radius="full"
-              className="bg-transparent text-green-300 w-24 h-24"
+              className="bg-transparent text-green-300 w-20 h-20"
             >
               <IconTree className="w-full h-full" />
             </Button>
@@ -156,7 +156,7 @@ export default function Home() {
             <Button
               isIconOnly
               radius="full"
-              className="bg-transparent text-green-300 w-16 h-16"
+              className="bg-transparent text-green-300 w-8 h-8"
             >
               <IconTree className="w-full h-full" />
             </Button>
@@ -182,7 +182,7 @@ export default function Home() {
         )}
         </div>
 
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col gap-6 items-center">
           {showTrain(createTrainClicked)}
           {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
