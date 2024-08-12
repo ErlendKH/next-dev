@@ -5,12 +5,10 @@ import NextImage from "next/image";
 // Next UI
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
-// import { BiTree, MaterialSymbolsTrain } from "./_components/icons"
 import { IconTree, IconTrain } from "./_components/icons"
 import { useState } from "react";
 
 import { toast } from 'react-hot-toast';
-import { tree } from "next/dist/build/templates/app-page";
 
 function delay(time:any) {
   return new Promise(resolve => setTimeout(resolve, time));
