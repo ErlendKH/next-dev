@@ -50,7 +50,7 @@ export default function Home() {
   function showTrain(trainCreated:boolean){
     return trainCreated ? (
       <ButtonGroup className="">
-        <Button isIconOnly radius="full" className="w-96 h-96 text-emerald-300" onClick={(e) => {trainHandler(e)}}>
+        <Button isIconOnly radius="full" className="w-96 h-96 text-emerald-300 border-2 border-emerald-300" onClick={(e) => {trainHandler(e)}}>
           <IconTrain className="size-32" />
         </Button>
       </ButtonGroup>
@@ -89,36 +89,106 @@ export default function Home() {
   }
 
   return (
-
     <main className="flex flex-col items-center bg-slate-950">
       <header className="flex flex-col items-center mt-32 mb-40 mx-16">
         <h1 className="text-6xl text-center dark:text-sky-300 text-sky-700 mb-20">
           Next.js Playground
         </h1>
-        <Avatar name="Erlend" src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" className="mb-4 w-32 h-32" />
+        <Avatar
+          name="Erlend"
+          src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
+          className="mb-4 w-32 h-32"
+        />
         {/* <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" /> */}
-        <div className="text-xl text-center">Created by <span className="dark:text-green-300 text-green-700">Erlend Kyrkjerud Hårtveit</span></div>
+        <div className="text-xl text-center">
+          Created by{" "}
+          <span className="dark:text-green-300 text-green-700">
+            Erlend Kyrkjerud Hårtveit
+          </span>
+        </div>
       </header>
 
       <div className="flex flex-col mb-60 mx-16">
 
-        <ButtonGroup>
-          <Button isIconOnly></Button>
-        </ButtonGroup>
+        <div className="mb-4">
 
-        {initialTrainButton(initialTrainText, createTrainClicked, trainIsLoading)}
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-12 h-12"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-8 h-8"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-16 h-16"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-24 h-24"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-16 h-16"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isDisabled>
+            <Button
+              isIconOnly
+              radius="full"
+              className="bg-transparent text-green-300 w-12 h-12"
+            >
+              <IconTree className="w-full h-full" />
+            </Button>
+          </ButtonGroup>
+
+        </div>
+
+        <div className="flex justify-center">
+        {initialTrainButton(
+          initialTrainText,
+          createTrainClicked,
+          trainIsLoading
+        )}
+        </div>
 
         <div className="flex flex-col gap-4 items-center">
           {showTrain(createTrainClicked)}
           {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
-
       </div>
 
-      <footer className="">
-        
-      </footer>
+      <footer className=""></footer>
     </main>
-
   );
 }
