@@ -3,7 +3,7 @@
 import { Avatar, Button, ButtonGroup } from "@nextui-org/react";
 import { trainContext } from "../_components/trainContext";
 import { useContext } from "react";
-import { IconGoldNugget, IconMoment, IconMouse } from "../_components/icons";
+import { IconGoldNugget, IconMoment, IconMouse, IconStarryNightAnimated, IconSunsetAnimated } from "../_components/icons";
 import Link from "next/link";
 
 export default function Station() {
@@ -23,7 +23,7 @@ export default function Station() {
             </header>
             <div className="flex flex-col mb-40 mx-16">
 
-                <div className="flex flex-col sm:flex-row gap-12 lg:gap-24 xl:gap-36">
+                <div className="flex flex-col sm:flex-row justify-center gap-12 lg:gap-24 xl:gap-36 mb-8">
 
                     <div className="flex flex-col justify-center text-center">
                         <ButtonGroup isDisabled className="mb-2">
@@ -53,6 +53,30 @@ export default function Station() {
                         </ButtonGroup>
                         <div className="text-lg">Pikachus found</div>
                         <div className="text-2xl text-yellow-700 dark:text-yellow-300">{ context.pikachus }</div>
+                    </div>
+
+                </div>
+                
+                <div className="flex flex-col sm:flex-row justify-center gap-12 lg:gap-24 xl:gap-36">
+
+                    <div className="flex flex-col justify-center text-center">
+                        <ButtonGroup isDisabled className="mb-2">
+                            <Button isIconOnly radius="full" className="w-24 h-24 text-amber-300">
+                                <IconSunsetAnimated className="size-3/5" />
+                            </Button>
+                        </ButtonGroup>
+                        <div className="text-lg">Sunsets</div>
+                        <div className="text-2xl text-amber-700 dark:text-amber-300">{context.sunsets}</div>
+                    </div>
+
+                    <div className="flex flex-col justify-center text-center">
+                        <ButtonGroup isDisabled className="mb-2">
+                            <Button isIconOnly radius="full" className="w-24 h-24 text-yellow-300">
+                                <IconStarryNightAnimated className="size-3/5" />
+                            </Button>
+                        </ButtonGroup>
+                        <div className="text-lg">Starry nights</div>
+                        <div className="text-2xl text-yellow-700 dark:text-yellow-300">{context.stars}</div>
                     </div>
 
                 </div>

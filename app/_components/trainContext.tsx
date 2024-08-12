@@ -6,7 +6,9 @@ import { Toaster } from "react-hot-toast";
 const trainData = {
     momentsPassed: 0,
     goldenNuggets: 0,
-    pikachus: 0
+    pikachus: 0,
+    sunsets: 0,
+    stars: 0
 }
 
 export const trainContext = createContext(trainData)

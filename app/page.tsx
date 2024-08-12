@@ -183,15 +183,14 @@ export default function Home() {
     // Override when reaching a target point
     if(counter % 10 == 0){
 
-      const random = randomIntegerInRange(1,5)
+      const random = randomIntegerInRange(1,4)
       console.log(`Fate rolled ${random}.`)
       let randomIcon = '🌅'
       switch(random){
-        case 1: randomIcon='🌅'; break;
-        case 2: randomIcon='🌄';break;
-        case 3: randomIcon='🏞️';break;
-        case 4: randomIcon='🌌';break;
-        case 5: randomIcon='🌠';break;
+        case 1: randomIcon='🌅'; context.sunsets++; break;
+        case 2: randomIcon='🌄'; context.sunsets++; break;
+        case 3: randomIcon='🌠'; context.stars++; break;
+        case 4: randomIcon='🌌'; context.stars++; break;
       }
 
       // const randomTen = randomIntegerInRange(1,10)
