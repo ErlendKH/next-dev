@@ -126,7 +126,7 @@ export default function Home() {
 
     const randomNumber = Math.round(Math.random() * 100)
     // console.log(`randomNumber: ${randomNumber}`)
-    console.log(trainCounter)
+    // console.log(trainCounter)
     if(randomNumber > 90){
       toast.success('Oh! You found a golden nugget.', {
         style: {
