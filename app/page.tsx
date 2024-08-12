@@ -8,7 +8,7 @@ import { trainContext } from "./_components/trainContext";
 import { useRouter } from 'next/navigation'
 
 // Next UI
-import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
+import { Avatar, Button, ButtonGroup, Image, Link } from "@nextui-org/react";
 
 import { IconTree, IconTrain } from "./_components/icons"
 import { useContext, useState } from "react";
@@ -192,12 +192,12 @@ export default function Home() {
           src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
           className="mb-4 w-32 h-32"
         />
-        {/* <Image src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png" alt="Erlend" className="border-4 border-emerald-700 dark:border-emerald-300 max-w-48 mb-4" /> */}
         <div className="text-xl text-center">
-          Created by{" "}
-          <span className="dark:text-green-300 text-green-700">
+          {"Created by "}
+          <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" 
+            className="text-xl dark:text-green-300 text-green-700">
             Erlend Kyrkjerud Hårtveit
-          </span>
+          </Link>
         </div>
       </header>
 

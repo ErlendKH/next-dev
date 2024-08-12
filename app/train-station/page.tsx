@@ -4,6 +4,7 @@ import { Avatar, Button, ButtonGroup } from "@nextui-org/react";
 import { trainContext } from "../_components/trainContext";
 import { useContext } from "react";
 import { IconGoldNugget, IconMoment, IconMouse } from "../_components/icons";
+import Link from "next/link";
 
 export default function Station() {
 
@@ -58,11 +59,11 @@ export default function Station() {
 
             </div>
             <footer className="mb-24">
-            <div className="text-md text-center">
-                    Created by{" "}
-                    <span className="dark:text-green-300 text-green-700">
+                <div className="text-md text-center">
+                    {"Created by "}
+                    <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" className="dark:text-green-300 text-green-700">
                         Erlend Kyrkjerud Hårtveit
-                    </span>
+                    </Link>
                 </div>
             </footer>
         </main>
