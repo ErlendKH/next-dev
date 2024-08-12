@@ -2,6 +2,9 @@
 
 import NextImage from "next/image";
 
+// Navigation
+import { useRouter } from 'next/navigation'
+
 // Next UI
 import { Avatar, Button, ButtonGroup, Image } from "@nextui-org/react";
 
@@ -38,7 +41,6 @@ const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
   } else {
     classes += "w-16 h-16" // Default
   }
-
   // console.log(classes)
 
   return (
@@ -66,11 +68,15 @@ function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
 
 export default function Home() {
 
+  const router = useRouter() // For navigation
+
   const [initialTrainText, setInitialTrainText] = useState("Let's create a railway.");
   const [createTrainClicked, setCreateTrainClicked] = useState(false);
   const [trainIsLoading, setTrainIsLoading] = useState(false);
   const [toastMessage, setToastMessage] = useState("On and on and on ...");
   const [trainCounter, setTrainCounter] = useState(0);
+  const [nextStageText, setNextStageText] = useState("Whenever you are ready to leave the train.")
+  const [leavingTrain, setLeavingTrain] = useState(false)
 
   function initialTrainButton(text:string, isClicked:boolean, loading:boolean){
     return isClicked ? (
@@ -140,6 +146,33 @@ export default function Home() {
     }
   }
 
+  function reachedDestination(counter:number, nextStageText:string, leaving:boolean) {
+
+    return counter >= 10 ? (
+      <Button isLoading={leaving} color="primary" variant="bordered" size="lg" className="text-sky-300 text-xl"
+        onClick={(e) => {nextStage(e)}}
+      >
+        {nextStageText}
+      </Button>
+    ) : ( 
+      null
+     )
+  }
+
+  function nextStage(e:any){
+    console.log(`Initiating next stage ...`)
+
+    setNextStageText("Leaving train...")
+    setLeavingTrain(true)
+
+    delay(3000).then((v) => {
+      console.log(`Finally breathing the fresh air outside.`)
+      router.push('/train-station')
+    })
+
+    // router.push('/train-station')
+  }
+
   return (
     <main className="flex flex-col items-center bg-slate-950">
       <header className="flex flex-col items-center mt-32 mb-40 mx-16">
@@ -176,14 +209,14 @@ export default function Home() {
         )}
         </div>
 
-        <div className="flex flex-col gap-6 items-center">
+        <div className="flex flex-col gap-6 items-center mb-12">
           {showTrain(createTrainClicked)}
           {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
 
-        <Button>
-          {"You've reach your destination"}
-        </Button>
+        <div className="flex justify-center">
+          {reachedDestination(trainCounter, nextStageText, leavingTrain)}
+        </div>
 
       </div>
 
