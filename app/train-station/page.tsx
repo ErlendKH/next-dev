@@ -1,8 +1,13 @@
 'use client';
 
 import { Avatar } from "@nextui-org/react";
+import { trainContext } from "../_components/trainContext";
+import { useContext } from "react";
 
 export default function Station() {
+
+    const context = useContext(trainContext)
+    console.log(context)
 
     return (
         <main className="flex flex-col items-center bg-slate-950">

@@ -71,7 +71,7 @@ function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
 export default function Home() {
 
   const context = useContext(trainContext)
-  console.log(context)
+  // console.log(context)
 
   const router = useRouter() // For navigation
 
@@ -126,6 +126,7 @@ export default function Home() {
   // Just a different way of defining a function
   const trainHandler = (e:any) => {
     setTrainCounter(trainCounter + 1)
+    context.momentsPassed++
 
     // Override when reaching a 
 
@@ -139,6 +140,7 @@ export default function Home() {
         },
         icon: '💰'
       })
+      context.goldenNuggets++
     } else if(randomNumber < 10){
       toast.success('Oh! You found a wild pikachu.', {
         style: {
@@ -146,6 +148,7 @@ export default function Home() {
         },
         icon: '🐹'
       })
+      context.pikachus++
     } else {
       toast.success(toastMessage);
     }
