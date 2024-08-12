@@ -142,7 +142,7 @@ export default function Home() {
     console.log(`Preparing a toast. The counter is ${counter}`)
 
     // Override when reaching a target point
-    if(counter % 10 == 0){
+    if(counter % 100 == 0){
 
       const random = randomIntegerInRange(1,4)
       console.log(`Fate rolled ${random}.`)
@@ -190,7 +190,7 @@ export default function Home() {
 
   function reachedDestination(counter:number, nextStageText:string, leaving:boolean) {
 
-    return counter >= 10 ? (
+    return counter >= 100 ? (
       <Button isLoading={leaving} color="primary" variant="bordered" size="lg" className="text-sky-300 text-xl"
         onClick={(e) => {nextStage(e)}}
       >
