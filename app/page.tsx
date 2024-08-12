@@ -201,7 +201,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex flex-col mb-60 mx-16">
+      <div className="flex flex-col mb-40 mx-16">
 
         <div className="flex flex-row items-end justify-center mb-6">
 
@@ -217,7 +217,7 @@ export default function Home() {
         )}
         </div>
 
-        <div className="flex flex-col gap-6 items-center mb-12">
+        <div className="flex flex-col gap-6 items-center w-full mb-12">
           {showTrain(createTrainClicked)}
           {showTrainCounter(createTrainClicked, trainCounter)}
         </div>
