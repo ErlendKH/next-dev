@@ -75,14 +75,14 @@ export default function Home() {
   const [trainIsLoading, setTrainIsLoading] = useState(false);
   const [toastMessage, setToastMessage] = useState("On and on and on ...");
   const [trainCounter, setTrainCounter] = useState(0);
-  const [nextStageText, setNextStageText] = useState("Whenever you are ready to leave the train.")
+  const [nextStageText, setNextStageText] = useState("Whenever you are ready.")
   const [leavingTrain, setLeavingTrain] = useState(false)
 
   function initialTrainButton(text:string, isClicked:boolean, loading:boolean){
     return isClicked ? (
       null
     ) : (
-      <Button isLoading={loading} size="lg" color="primary" variant="ghost" endContent={<IconTrain />} 
+      <Button isLoading={loading} size="lg" color="primary" variant="ghost" 
         className="text-xl text-sky-300 mb-12" onClick={(e) => {createTrainHandler(e)}}>
         { text }
       </Button>
