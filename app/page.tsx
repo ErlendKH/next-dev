@@ -1,5 +1,6 @@
 'use client';
 
+// Unused at the moment
 import NextImage from "next/image";
 
 import { trainContext } from "./_components/trainContext";
@@ -16,63 +17,6 @@ import { useContext, useState } from "react";
 import { toast } from 'react-hot-toast';
 import { createTrees, Tree } from "./_components/tree";
 import { delay, randomIntegerInRange } from "./_utils/utilityFunctions";
-
-// function delay(time:any) {
-//   return new Promise(resolve => setTimeout(resolve, time));
-// }
-
-// function randomIntegerInRange(min:number, max:number) {
-//   return Math.round(Math.random() * (max - min) + min)
-// }
-
-// // size is optional. md w-16 h-16 is the default value.
-// const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
-//   let classes = "bg-transparent text-green-300 "
-//   if(size){
-//     switch(size){
-//       case "xs":
-//         classes += "w-8 h-8"
-//         break;
-//       case "sm":
-//         classes += "w-12 h-12"
-//         break;
-//       case "md":
-//         classes += "w-16 h-16"
-//         break;
-//       case "lg":
-//         classes += "w-20 h-20"
-//         break;
-//       default:
-//         classes += "w-16 h-16" // Default
-//         break;
-//     }
-//   } else {
-//     classes += "w-16 h-16" // Default
-//   }
-//   // console.log(classes)
-
-//   return (
-//     <ButtonGroup isDisabled>
-//       <Button isIconOnly radius="full" className={classes}>
-//         <IconTree className="w-full h-full" />
-//       </Button>
-//     </ButtonGroup>
-//   );
-// };
-
-// // Creates trees with array of sizes
-// function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
-//   let trees = []
-//   for (let i = 0; i < treeSizeArray.length; i++) {
-//     const iconTree = <Tree size={treeSizeArray[i]} key={i} />
-//     trees.push(iconTree)
-//   }
-//   return treeSizeArray ? (
-//     trees
-//   ) : (
-//     null
-//   )
-// }
 
 export default function Home() {
 
@@ -221,20 +165,6 @@ export default function Home() {
         <h1 className="text-6xl text-center dark:text-sky-300 text-sky-700 mb-20">
           Next.js Playground
         </h1>
-{/* 
-        <Avatar
-          name="Erlend"
-          src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
-          className="mb-4 w-32 h-32"
-        />
-        <div className="text-xl text-center">
-          {"Created by "}
-          <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" 
-            className="text-xl dark:text-green-300 text-green-700">
-            Erlend Kyrkjerud Hårtveit
-          </Link>
-        </div>
- */}
       </header>
 
       <div className="flex flex-col mb-40 mx-16">

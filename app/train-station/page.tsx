@@ -99,7 +99,7 @@ export default function Station() {
 
                 </div>
 
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col gap-3 justify-center items-center">
                     <div>
                         {createRandomizedTreeGroup(6)}
                     </div>
