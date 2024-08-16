@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import { Avatar, Button, ButtonGroup } from "@nextui-org/react";
 import { trainContext } from "../_components/trainContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { IconGoldNugget, IconMoment, IconMouse, IconStarryNightAnimated, IconSunsetAnimated } from "../_components/icons";
 import Link from "next/link";
 import { createRandomizedTreeGroup } from '../_components/tree';
@@ -14,6 +14,8 @@ export default function Station() {
 
     const context = useContext(trainContext)
     // console.log(context)
+
+    const endText = context.momentsPassed > 0 ? "You've reached the end of the line." : "Well, well, aren't you a clever one. Didn't get to see any pikachus, though."
 
     const router = useRouter()
 
@@ -36,7 +38,7 @@ export default function Station() {
                     Train Station
                 </h1>
                 <div className="text-xl text-center">
-                    {"You've reached the end of the line."}
+                    {endText}
                 </div>
             </header>
             <div className="flex flex-col mb-40 mx-16">
