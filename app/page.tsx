@@ -219,6 +219,7 @@ export default function Home() {
         <h1 className="text-6xl text-center dark:text-sky-300 text-sky-700 mb-20">
           Next.js Playground
         </h1>
+{/* 
         <Avatar
           name="Erlend"
           src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
@@ -231,6 +232,7 @@ export default function Home() {
             Erlend Kyrkjerud Hårtveit
           </Link>
         </div>
+ */}
       </header>
 
       <div className="flex flex-col mb-40 mx-16">
@@ -260,7 +262,22 @@ export default function Home() {
 
       </div>
 
-      <footer className=""></footer>
+      <footer className="mb-24">
+        <div className="flex flex-col items-center">
+          <Avatar
+            name="Erlend"
+            src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
+            className="mb-4 w-20 h-20"
+          />
+          <div className="text-md text-center">
+            {"Created by "}
+            <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" className="dark:text-green-300 text-green-700">
+              Erlend Kyrkjerud Hårtveit
+            </Link>
+          </div>
+        </div>
+      </footer>
+
     </main>
   );
 }

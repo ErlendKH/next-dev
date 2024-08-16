@@ -107,14 +107,23 @@ export default function Station() {
                 </div>
 
             </div>
+
             <footer className="mb-24">
-                <div className="text-md text-center">
-                    {"Created by "}
-                    <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" className="dark:text-green-300 text-green-700">
-                        Erlend Kyrkjerud Hårtveit
-                    </Link>
+                <div className="flex flex-col items-center">
+                    <Avatar
+                        name="Erlend"
+                        src="Erlend-Kyrkjerud-Haartveit-Bilde-No-Background.png"
+                        className="mb-4 w-20 h-20"
+                    />
+                    <div className="text-md text-center">
+                        {"Created by "}
+                        <Link title="Link to my more-or-less official website" href="https://www.erlend.work" target="_blank" className="dark:text-green-300 text-green-700">
+                            Erlend Kyrkjerud Hårtveit
+                        </Link>
+                    </div>
                 </div>
             </footer>
+
         </main>
     )
 }
