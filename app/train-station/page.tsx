@@ -15,7 +15,8 @@ export default function Station() {
     const context = useContext(trainContext)
     // console.log(context)
 
-    const endText = context.momentsPassed > 0 ? "You've reached the end of the line." : "Well, well, aren't you a clever one. Didn't get to see any pikachus, though."
+    // Potential easter egg, but context resets on refresh too, so...
+    // const endText = context.momentsPassed > 0 ? "You've reached the end of the line." : "Well, well, aren't you a clever one. Didn't get to see any pikachus, though."
 
     const router = useRouter()
 
@@ -38,7 +39,7 @@ export default function Station() {
                     Train Station
                 </h1>
                 <div className="text-xl text-center">
-                    {endText}
+                    {"You've reached the end of the line."}
                 </div>
             </header>
             <div className="flex flex-col mb-40 mx-16">
