@@ -14,63 +14,65 @@ import { IconTree, IconTrain } from "./_components/icons"
 import { useContext, useState } from "react";
 
 import { toast } from 'react-hot-toast';
+import { createTrees, Tree } from "./_components/tree";
+import { delay, randomIntegerInRange } from "./_utils/utilityFunctions";
 
-function delay(time:any) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
+// function delay(time:any) {
+//   return new Promise(resolve => setTimeout(resolve, time));
+// }
 
-function randomIntegerInRange(min:number, max:number) {
-  return Math.round(Math.random() * (max - min) + min)
-}
+// function randomIntegerInRange(min:number, max:number) {
+//   return Math.round(Math.random() * (max - min) + min)
+// }
 
-// size is optional. md w-16 h-16 is the default value.
-const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
-  let classes = "bg-transparent text-green-300 "
-  if(size){
-    switch(size){
-      case "xs":
-        classes += "w-8 h-8"
-        break;
-      case "sm":
-        classes += "w-12 h-12"
-        break;
-      case "md":
-        classes += "w-16 h-16"
-        break;
-      case "lg":
-        classes += "w-20 h-20"
-        break;
-      default:
-        classes += "w-16 h-16" // Default
-        break;
-    }
-  } else {
-    classes += "w-16 h-16" // Default
-  }
-  // console.log(classes)
+// // size is optional. md w-16 h-16 is the default value.
+// const Tree = ({ size }: { size?: "xs"|"sm"|"md"|"lg" }) => {
+//   let classes = "bg-transparent text-green-300 "
+//   if(size){
+//     switch(size){
+//       case "xs":
+//         classes += "w-8 h-8"
+//         break;
+//       case "sm":
+//         classes += "w-12 h-12"
+//         break;
+//       case "md":
+//         classes += "w-16 h-16"
+//         break;
+//       case "lg":
+//         classes += "w-20 h-20"
+//         break;
+//       default:
+//         classes += "w-16 h-16" // Default
+//         break;
+//     }
+//   } else {
+//     classes += "w-16 h-16" // Default
+//   }
+//   // console.log(classes)
 
-  return (
-    <ButtonGroup isDisabled>
-      <Button isIconOnly radius="full" className={classes}>
-        <IconTree className="w-full h-full" />
-      </Button>
-    </ButtonGroup>
-  );
-};
+//   return (
+//     <ButtonGroup isDisabled>
+//       <Button isIconOnly radius="full" className={classes}>
+//         <IconTree className="w-full h-full" />
+//       </Button>
+//     </ButtonGroup>
+//   );
+// };
 
-// Creates trees with array of sizes
-function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
-  let trees = []
-  for (let i = 0; i < treeSizeArray.length; i++) {
-    const iconTree = <Tree size={treeSizeArray[i]} key={i} />
-    trees.push(iconTree)
-  }
-  return treeSizeArray ? (
-    trees
-  ) : (
-    null
-  )
-}
+// // Creates trees with array of sizes
+// function createTrees(treeSizeArray:("xs"|"sm"|"md"|"lg")[]){
+//   let trees = []
+//   for (let i = 0; i < treeSizeArray.length; i++) {
+//     const iconTree = <Tree size={treeSizeArray[i]} key={i} />
+//     trees.push(iconTree)
+//   }
+//   return treeSizeArray ? (
+//     trees
+//   ) : (
+//     null
+//   )
+// }
 
 export default function Home() {
 

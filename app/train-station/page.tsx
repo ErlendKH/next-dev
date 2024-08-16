@@ -8,6 +8,7 @@ import { trainContext } from "../_components/trainContext";
 import { useContext } from "react";
 import { IconGoldNugget, IconMoment, IconMouse, IconStarryNightAnimated, IconSunsetAnimated } from "../_components/icons";
 import Link from "next/link";
+import { createRandomizedTreeGroup } from '../_components/tree';
 
 export default function Station() {
 
@@ -98,7 +99,10 @@ export default function Station() {
 
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex flex-col justify-center items-center">
+                    <div>
+                        {createRandomizedTreeGroup(6)}
+                    </div>
                     <Button size="lg" variant="light" className="text-3xl text-sky-700 dark:text-sky-300"
                         onClick={(e) => {goingBack(e)}}
                     >
