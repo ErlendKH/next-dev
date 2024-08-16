@@ -15,7 +15,7 @@ export default function Station() {
     const context = useContext(trainContext)
     // console.log(context)
 
-    // Potential easter egg, but context resets on refresh too, so...
+    // Potential easter egg, but context resets on refresh too.
     // const endText = context.momentsPassed > 0 ? "You've reached the end of the line." : "Well, well, aren't you a clever one. Didn't get to see any pikachus, though."
 
     const router = useRouter()
