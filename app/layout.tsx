@@ -16,6 +16,8 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "Next.js Playground",
   description: "Created by Erlend Kyrkjerud Hårtveit for fun and learning purposes.",
+  authors: [{ name: 'Erlend Kyrkjerud Hårtveit' ,url: 'https://www.erlend.work' }],
+  generator: 'react, nextjs, tailwindcss',
 };
 
 export default function RootLayout({
